@@ -1,0 +1,36 @@
+<% layout("layouts/boilerplate") %>
+<body>
+  <div class="container-fluid mt-2">
+    <div class="d-flex gap-4 flex-wrap">
+      <% for(let chat of allchat){ %>
+      <div class="card mb-3" style="width: 19rem">
+        <img
+          src="<%=chat.image  %>"
+          class="card-img-top"
+          alt="image"
+          style="height: 16rem" />
+        <div class="card-body">
+          <h5 class="card-title text-primary-emphasis">
+            From : <%=chat.from %>
+          </h5>
+          <h5 class="card-title text-primary-emphasis">To: <%=chat.to %></h5>
+          <p class="card-text text-secondary-emphasis">
+            Message :<%=chat.msg %>
+          </p>
+          <div class="row">
+            <div class="col d-flex gap-5">
+              <a href="/chats/<%=chat._id%>/edit" class="btn btn-primary"
+                >Edit Details</a
+              >
+              <form method="POST" action="/chats/<%=chat._id%>?_method=DELETE">
+                <button class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% } %>
+    </div>
+  </div>
+</body>
