@@ -3,6 +3,7 @@ require("dotenv").config();
 const app = express();
 const path = require("path");
 const User = require("./models/User");
+const cors=require("cors");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const MongoStore = require("connect-mongo");
@@ -38,7 +39,7 @@ const sessionOption = {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.engine("ejs", engine);
-
+app.use(cors());
 // Middleware
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.json());
