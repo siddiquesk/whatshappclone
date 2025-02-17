@@ -97,12 +97,15 @@ app.get("/logout", usercontroller.logout);
 // Universal error handling for invalid routes (404 Page Not Found)
 app.use((req, res, next) => {
   res.status(404).render("404", { message: "Page Not Found" });
+  next(); // This should be added here if you want to handle further processing.
 });
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).render("error", { message: "Something went wrong! Please try again later." });
 });
+
 
 // Start server
 app.listen(PORT, () => {
