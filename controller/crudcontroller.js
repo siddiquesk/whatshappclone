@@ -23,7 +23,7 @@ module.exports.createChat = async (req, res) => {
     // Flash a success message after the chat is created
     req.flash("success", "New Chat Created");
     // Redirect to the chats page after creation
-    res.redirect("/chats");
+    res.redirect("/");
   } catch (err) {
     // If chat creation fails, send a 405 error and flash an error message
     res.status(405).send("Chat was not created");
@@ -58,7 +58,7 @@ module.exports.editChat = async (req, res) => {
     await chatToUpdate.save();
     // Flash a success message after the update and redirect to the chats page
     req.flash("success", "Chat updated");
-    res.redirect("/chats");
+    res.redirect("/");
   } catch (err) {
     // Handle any error while updating the chat
     res.status(500).send("Error updating chat");
@@ -75,7 +75,7 @@ module.exports.destroyChat = async (req, res) => {
 
     // Flash a success message after deletion and redirect to the chats page
     req.flash("success", "Your chat deleted");
-    res.redirect("/chats");
+    res.redirect("/");
   } catch (err) {
     // Handle any error during the deletion process
     res.status(405).send("Error deleting chat");

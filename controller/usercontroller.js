@@ -21,7 +21,7 @@ module.exports.signupcreation = async (req, res) => {
       }
       // If login is successful, flash a success message and redirect to the chats page
       req.flash("success", "Sign up successful");
-      res.redirect("/chats");
+      res.redirect("/");
     });
 
   } catch (err) {
@@ -45,6 +45,6 @@ module.exports.logout = (req, res, next) => {
     }
     // If logout is successful, flash a success message and redirect to the chats page
     req.flash("success", "Logged out successfully");
-    res.redirect("/chats");
+    res.redirect("/");
   });
 };

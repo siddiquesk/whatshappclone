@@ -72,7 +72,7 @@ app.use((req, res, next) => {
 // Routes
 
 // Chat routes
-app.get("/chats", crudcontroller.index);
+app.get("/", crudcontroller.index);
 app.get("/chats/new", crudcontroller.newForm);
 app.post("/chats", crudcontroller.createChat);
 app.get("/chats/:id/edit", crudcontroller.editForm);
