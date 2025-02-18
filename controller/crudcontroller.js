@@ -1,5 +1,4 @@
 const chat = require("../models/chat"); // Importing the Chat model for database operations
-// Display all chats
 module.exports.index = async (req, res) => {
   try {
     // Fetch all chats from the database
