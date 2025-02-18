@@ -100,11 +100,10 @@ app.use((req, res, next) => {
   next(); // This should be added here if you want to handle further processing.
 });
 
-// Global error handler
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).render("error", { message: "Something went wrong! Please try again later." });
-});
+//global error handling
+app.all("*",(re,res)=>{
+  res.status(404).render("404", { message: "Page not exist" });
+})
 
 
 // Start server

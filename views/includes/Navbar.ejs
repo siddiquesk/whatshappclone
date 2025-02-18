@@ -1,51 +1,75 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top mb-4">
   <div class="container-fluid mx-4">
     <!-- Navbar Toggler for mobile responsiveness -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" 
-      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <!-- Navbar Brand (logo) -->
     <a class="navbar-brand" href="/chats">
-      <i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 22px"></i>
+      <i
+        class="fa-brands fa-whatsapp"
+        style="color: #25d366; font-size: 22px"></i>
     </a>
-    
+
     <!-- Navbar Links (Collapsible) -->
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <!-- Create New Chat Link -->
         <li class="nav-item">
-          <a class="nav-link active fs-5 text-light" aria-current="page" href="/chats/new">Create new chat</a>
+          <a
+            class="nav-link active fs-5 text-light"
+            aria-current="page"
+            href="/chats/new"
+            >Create new chat</a
+          >
         </li>
-        
+
         <!-- Home Link -->
         <li class="nav-item">
-          <a class="nav-link active fs-5" aria-current="page" href="/chats">Home</a>
+          <a class="nav-link active fs-5" aria-current="page" href="/chats"
+            >Home</a
+          >
         </li>
-        
+
         <!-- Conditional Login/Signup or Logout Links -->
         <% if (!currUser) { %>
-          <!-- Show Signup and Login if the user is not logged in -->
-          <li class="nav-item">
-            <a class="nav-link active fs-5" aria-current="page" href="/signup">Signup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active fs-5" aria-current="page" href="/login">Login</a>
-          </li>
+        <!-- Show Signup and Login if the user is not logged in -->
+        <li class="nav-item">
+          <a class="nav-link active fs-5" aria-current="page" href="/signup"
+            >Signup</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fs-5" aria-current="page" href="/login"
+            >Login</a
+          >
+        </li>
         <% } else { %>
-          <!-- Show Logout if the user is logged in -->
-          <li class="nav-item">
-            <a class="nav-link active fs-5" aria-current="page" href="/logout">Logout</a>
-          </li>
+        <!-- Show Logout if the user is logged in -->
+        <li class="nav-item">
+          <a class="nav-link active fs-5" aria-current="page" href="/logout"
+            >Logout</a
+          >
+        </li>
         <% } %>
       </ul>
       <!-- Search Form -->
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search" />
         <button class="btn btn-outline-dark" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
-
